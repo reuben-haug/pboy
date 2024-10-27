@@ -1,0 +1,14 @@
+# Testing and code quality tools
+pytest==7.2.0
+flake8==5.0.4
+black==23.1.0
+isort==5.10.1
+mypy==1.0.0
+
+# Documentation tools
+sphinx==7.0.1
+sphinxcontrib-plantuml==0.25
+
+# Additional dependencies for testing and development
+tox==4.0.8
+behave==1.2.6

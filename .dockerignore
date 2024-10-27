@@ -1,0 +1,13 @@
+# Ignore everything by default
+**
+
+# Allow files needed for building the project
+!requirements-dev.txt
+!Dockerfile
+!.dockerignore
+!src/
+!tests/
+!docs/
+!pyproject.toml
+!tox.ini
+!README.md

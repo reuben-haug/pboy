@@ -1,0 +1,53 @@
+# Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# VS Code specific
+.vscode/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+
+# Cache files
+*.egg-info/
+.eggs/
+.cache/
+
+# Dev Container
+.devcontainer/
+
+# Test and coverage results
+.pytest_cache/
+.tox/
+coverage/
+
+# Sphinx documentation
+docs/_build/
+
+# Distribution files
+dist/
+build/
+*.egg
+*.egg-info/
+
+# Secrets or environment variables
+.env
+*.env
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
