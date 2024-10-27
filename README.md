@@ -1,6 +1,6 @@
-# {{ cookiecutter.project_name }}
+# Your Project Name
 
-{{ cookiecutter.project_description }}
+Your project description.
 
 ## Table of Contents
 
@@ -18,5 +18,6 @@ This project is a part of a personal portfolio/coding challenge series and adher
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/{{ cookiecutter.project_name }}.git
-   cd {{ cookiecutter.project_name }}
+   git clone https://github.com/reuben-haug/pboy.git
+   cd pboy
+   ```
