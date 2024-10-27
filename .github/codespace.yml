@@ -1,0 +1,9 @@
+# .github/codespace.yml
+name: "Project Template Codespace"
+on_create:
+  tasks:
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements-dev.txt
+forwardPorts: 
+  - 8000  # Default port for web services, update as needed
