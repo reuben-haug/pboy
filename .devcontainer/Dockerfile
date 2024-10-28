@@ -5,8 +5,8 @@ FROM python:3.10-slim
 WORKDIR /workspace
 
 # Install dependencies for building and linting
-COPY requirements-dev.txt .
+COPY ../requirements-dev.txt .
 RUN pip install --upgrade pip && pip install -r requirements-dev.txt
 
 # Expose port (optional, for web apps or APIs)
-EXPOSE 8000
+# EXPOSE 8000
