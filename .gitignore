@@ -25,7 +25,7 @@ ENV/
 .cache/
 
 # Dev Container
-.devcontainer/
+#.devcontainer/
 
 # Test and coverage results
 .pytest_cache/
