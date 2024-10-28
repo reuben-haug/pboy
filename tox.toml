@@ -1,0 +1,43 @@
+requires = ["tox>=4"]
+env_list = ["lint", "type", "3.13", "3.12", "3.11"]
+min_version = 4.0
+skipsdist = true
+setenv =
+    PYTHONPATH=src
+commands =
+    pytest tests
+    behave tests
+
+[env_run_base]
+description = "run unit tests"
+deps = [
+    "pytest>=8",
+    "pytest-sugar"
+]
+commands = [["pytest", { replace = "posargs", default = ["tests"], extend = true }]]
+
+[env.lint]
+description = "run linters"
+skip_install = true
+deps = ["black"]
+commands = [["black", { replace = "posargs", default = ["."], extend = true} ]]
+
+[env.type]
+description = "run type checks"
+deps = ["mypy"]
+commands = [["mypy", { replace = "posargs", default = ["src", "tests"], extend = true} ]]
+
+[testenv]
+deps = pip-tools
+    pytest
+    behave
+commands_pre = pip-sync requirements.txt
+
+[testenv.docs]
+description = "build documentation"
+basepython = "python3.10"
+deps = ["sphinx>=4"]
+commands = [
+    'sphinx-build -d "{envtmpdir}{/}doctree" docs "{toxworkdir}{/}docs_out" --color -b html',
+    'python -c \'print(r"documentation available under file://{toxworkdir}{/}docs_out{/}index.html")\''
+]

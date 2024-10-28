@@ -2,9 +2,6 @@
 **
 
 # Allow files needed for building the project
-!requirements-dev.txt
-!Dockerfile
-!.dockerignore
 !src/
 !tests/
 !docs/
@@ -14,3 +11,9 @@
 
 # Allow .devcontainer directory and its contents
 !.devcontainer/
+!Dockerfile
+!.dockerignore
+!requirements-dev.txt
+
+# Allow .gitignore file
+!.gitignore
