@@ -11,3 +11,6 @@
 !pyproject.toml
 !tox.ini
 !README.md
+
+# Allow .devcontainer directory and its contents
+!.devcontainer/
