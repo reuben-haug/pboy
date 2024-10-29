@@ -25,5 +25,6 @@ test = [
     # Testing tools to test this project
     "pytest==7.2.0",
     "tox==4.0.8",
-    "behave==1.2.6"
+    "behave==1.2.6",
+    "black==21.12b0"
 ]
