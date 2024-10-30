@@ -1,6 +1,6 @@
-import hello_world
+from src.main import main
 
 def test_hw(capsys):
-        hello_world.main([])
+        main.main([])
         out, err = capsys.readouterr()
         assert "Hello, World!" in out

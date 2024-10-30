@@ -4,18 +4,23 @@ FROM python:3.10-slim
 # Set the working directory
 WORKDIR /workspaces
 
-# Install Git and other dependencies
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# Install dependencies for Miniconda
+RUN apt-get update && apt-get install -y wget bzip2 && rm -rf /var/lib/apt/lists/*
 
-# Install pip-tools and other dependencies
-RUN pip install pip-tools
+# Install Miniconda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /miniconda.sh && \
+    bash /miniconda.sh -b -p /miniconda && \
+    rm /miniconda.sh
 
-# Install Sphinx and other dependencies
-RUN python -m pip install sphinx
+# Update PATH to include conda
+ENV PATH=/miniconda/bin:$PATH
 
-# Install dependencies for building and linting
-COPY ../requirements-dev.txt .
-RUN pip install --upgrade pip && pip install -r requirements-dev.txt
+# Create the Conda environment
+COPY environment.yml .
+RUN conda env create -f environment.yml
+
+# Activate the environment
+SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
 
 # Copy the current directory contents into the container at /workspaces
 COPY . .

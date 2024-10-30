@@ -11,14 +11,19 @@
                 "ms-azuretools.vscode-docker",
                 "GitHub.copilot",
                 "GitHub.copilot-chat",
-                "Git.git"
+                "Git.git",
+                "tamasfe.even-better-toml",
+                "ms-python.black-formatter",
+                "ms-python.flake8"
             ],
             "settings": {
                 "python.pythonPath": "/usr/local/bin/python",
-                "python.envFile": "${workspaceFolder}/.env"
+                "python.envFile": "${workspaceFolder}/.env",
+                "editor.formatOnSave": true,
+                "python.linting.flake8Enabled": true,
+                "python.linting.enabled": true
             }
         }
     },
     "postCreateCommand": "pip install -r requirements-dev.txt"
-  }
-  
+}
