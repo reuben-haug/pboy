@@ -1,0 +1,10 @@
+name: myenv
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - sphinx
+  - pip
+  - pip:
+    - pip-tools
+    - -r file:requirements-dev.txt
