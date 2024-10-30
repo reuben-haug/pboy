@@ -15,6 +15,9 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -
 # Update PATH to include conda
 ENV PATH=/miniconda/bin:$PATH
 
+# Debugging: List contents of the working directory
+RUN ls -la /workspaces
+
 # Create the Conda environment
 COPY environment.yml .
 RUN conda env create -f environment.yml
