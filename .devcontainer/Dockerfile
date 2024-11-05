@@ -20,13 +20,15 @@ COPY . .
 # Configure Git to use credential helper
 RUN git config --system credential.helper store
 
-# Install global development tools that are IDE/workspace related
+# Install global development tools with compatible versions
 RUN pip install --no-cache-dir \
+    click==8.0.4 \
     black==21.12b0 \
     pip-tools==6.13.0 \
-    mypy
+    mypy \
+    flake8==6.1.0
 
-# We'll install project dependencies later via postCreateCommand
+# We'll install project dependencies later via postCreateCommand from devcontainer.json
 
 # Expose port (optional, for web apps or APIs)
 # EXPOSE 8000

@@ -8,3 +8,10 @@ dependencies:
   - pip:
     - pip-tools
     - -r file:requirements-dev.txt
+    - pytest==7.2.0
+    - tox==4.0.8
+    - behave==1.2.6
+    - black==21.12b0
+    - sphinx==7.0.1
+    - sphinxcontrib-plantuml==0.25
+    - pip-tools==6.13.0

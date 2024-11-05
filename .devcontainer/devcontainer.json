@@ -26,7 +26,7 @@
                 "python.linting.flake8Enabled": true,
                 "python.linting.enabled": true,
                 "security.workspace.trust.enabled": true,
-                "security.workspace.trust.untrustedFiles": "prompt",
+                "security.workspace.trust.untrustedFiles": "open",
                 "git.enableCommitSigning": true,
                 "git.requireGpgSign": true,
                 "git.enableSignedBadge": true
@@ -48,8 +48,10 @@
     "remoteUser": "vscode",
     "updateRemoteUserUID": true,
     "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {
-            "version": "latest"
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "username": "vscode",
+            "upgradePackages": false
         }
     },
     "securityOpt": ["no-new-privileges"],
