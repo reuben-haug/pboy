@@ -37,7 +37,7 @@ RUN pip install --no-cache-dir \
     flake8==6.1.0
 
 # Create conda environment from environment.yaml
-COPY environment.yml .
+COPY environment.yaml .
 RUN conda env create -f environment.yaml
 
 # We'll install project dependencies later via postCreateCommand from devcontainer.json
