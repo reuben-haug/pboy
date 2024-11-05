@@ -10,6 +10,8 @@
 
 # Python project files
 !*.py
+!*.yaml
+!*.yml
 !pyproject.toml
 !requirements.txt
 !setup.cfg
