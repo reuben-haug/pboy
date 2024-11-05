@@ -31,7 +31,7 @@ RUN git config --system credential.helper store
 
 # Install global development tools with compatible versions
 RUN pip install --no-cache-dir \
-    black==21.12b0 \
+    black==23.10.1 \
     pip-tools==6.13.0 \
     mypy \
     flake8==6.1.0
