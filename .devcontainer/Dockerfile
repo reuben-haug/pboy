@@ -38,7 +38,7 @@ RUN pip install --no-cache-dir \
 
 # Create conda environment from environment.yml
 COPY environment.yml .
-RUN conda env create -f environment.yml
+RUN conda env create -f environment.yaml
 
 # We'll install project dependencies later via postCreateCommand from devcontainer.json
 
