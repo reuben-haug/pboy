@@ -7,7 +7,6 @@ dependencies:
   - pip
   - pip:
     - pip-tools
-    - -r file:requirements-dev.txt
     - pytest==7.2.0
     - tox==4.0.8
     - behave==1.2.6
