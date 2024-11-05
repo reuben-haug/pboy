@@ -24,7 +24,7 @@
 
 # Allow environment variables and files
 !.env
-!environment.yml
+!environment.yaml
 
 # Allow pre-commit configuration file
 !.pre-commit-config.yaml

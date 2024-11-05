@@ -36,7 +36,7 @@ RUN pip install --no-cache-dir \
     mypy \
     flake8==6.1.0
 
-# Create conda environment from environment.yml
+# Create conda environment from environment.yaml
 COPY environment.yml .
 RUN conda env create -f environment.yaml
 
