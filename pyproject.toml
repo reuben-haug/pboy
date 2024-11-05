@@ -25,6 +25,11 @@ test = [
     "pytest==7.2.0",
     "tox==4.0.8",
     "behave==1.2.6",
-    "black==21.12b0",
+    "black==23.10.1",
     "pip-tools==6.13.0"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src"
 ]

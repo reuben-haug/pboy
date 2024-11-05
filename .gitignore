@@ -47,3 +47,8 @@ build/
 .pytest_cache/
 .tox/
 .coverage
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

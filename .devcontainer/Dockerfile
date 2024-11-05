@@ -19,8 +19,9 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -
     bash ~/miniconda.sh -b -p /opt/conda && \
     rm ~/miniconda.sh
 
-# Add conda to path
+# Add conda to path and initialize
 ENV PATH="/opt/conda/bin:$PATH"
+RUN conda init bash
 
 # Copy the current directory contents into the container at /workspaces
 COPY . .

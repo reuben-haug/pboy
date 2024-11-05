@@ -44,7 +44,7 @@
             }
         }
     },
-    "postCreateCommand": "echo 'conda activate myenv' >> ~/.bashrc && source ~/.bashrc && pip install -e '.[dev,test]'",
+    "postCreateCommand": "/bin/bash -c 'conda init bash && source ~/.bashrc && conda activate myenv && pip install -e \".[dev,test]\"'",
     "remoteUser": "vscode",
     "updateRemoteUserUID": true,
     "features": {
