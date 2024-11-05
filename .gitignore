@@ -1,53 +1,49 @@
-# Python files
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
+# First, ignore everything
+*
+*/**
 
-# Virtual environments
-.venv/
-env/
-venv/
-ENV/
+# Then, allow specific files/folders
 
-# VS Code specific
-.vscode/
+# Git
+!.gitignore
+!.gitattributes
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
+# Python project files
+!*.py
+!pyproject.toml
+!requirements.txt
+!setup.cfg
+!setup.py
 
-# Byte-compiled / optimized / DLL files
-*.pyc
-
-# Cache files
-*.egg-info/
-.eggs/
-.cache/
+# Documentation
+!docs/
+!docs/**/*.rst
+!docs/**/*.md
+!*.rst
+!README.md
+!CHANGELOG.md
+!LICENSE
 
 # Dev Container
-#.devcontainer/
+!.devcontainer/
+!.devcontainer/**
 
-# Test and coverage results
-.pytest_cache/
-.tox/
-coverage/
+# Test configurations
+!pytest.ini
+!tox.ini
+!.coveragerc
 
-# Sphinx documentation
-docs/_build/
+# Keep all GitHub workflows
+!.github/
+!.github/**/*.yml
 
-# Distribution files
+# Explicitly block
+.env
+*.pyc
+__pycache__/
+*.egg-info/
 dist/
 build/
-*.egg
-*.egg-info/
-
-# Secrets or environment variables
-.env
-*.env
-
-# Log files
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
+.pytest_cache/
+.tox/
+.coverage

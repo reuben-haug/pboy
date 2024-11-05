@@ -1,7 +1,8 @@
 {
     "name": "Python Dev Environment",
     "build": {
-      "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "context": ".."
     },
     "customizations": {
         "vscode": {
@@ -14,16 +15,44 @@
                 "Git.git",
                 "tamasfe.even-better-toml",
                 "ms-python.black-formatter",
-                "ms-python.flake8"
+                "ms-python.flake8",
+                "GitHub.vscode-pull-request-github",
+                "microsoft.vscode-github-authentication"
             ],
             "settings": {
                 "python.pythonPath": "/usr/local/bin/python",
                 "python.envFile": "${workspaceFolder}/.env",
                 "editor.formatOnSave": true,
                 "python.linting.flake8Enabled": true,
-                "python.linting.enabled": true
+                "python.linting.enabled": true,
+                "security.workspace.trust.enabled": true,
+                "security.workspace.trust.untrustedFiles": "prompt",
+                "git.enableCommitSigning": true,
+                "git.requireGpgSign": true,
+                "git.enableSignedBadge": true
+            }
+        },
+        "codespaces": {
+            "repositories": {
+                "*": {
+                    "trusted": true
+                },
+                "your-org/*": {
+                    "trusted": true,
+                    "permissions": "read-all"
+                }
             }
         }
     },
-    "postCreateCommand": "pip install -r requirements-dev.txt"
+    "postCreateCommand": "pip install -e '.[dev,test]'",
+    "remoteUser": "vscode",
+    "updateRemoteUserUID": true,
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "version": "latest"
+        }
+    },
+    "securityOpt": ["no-new-privileges"],
+    "capAdd": [],
+    "privileged": false
 }

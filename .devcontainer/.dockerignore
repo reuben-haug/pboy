@@ -5,9 +5,13 @@
 !src/
 !tests/
 !docs/
+!source/
 !pyproject.toml
 !tox.ini
 !README.md
+!requirements.txt
+!Makefile
+!make.bat
 
 # Allow .devcontainer directory and its contents
 !.devcontainer/
@@ -17,3 +21,10 @@
 
 # Allow .gitignore file
 !.gitignore
+
+# Allow environment variables and files
+!.env
+!environment.yml
+
+# Allow pre-commit configuration file
+!.pre-commit-config.yaml
