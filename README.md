@@ -30,11 +30,17 @@ cd docs
 sphinx-quickstart
 ```
 2. Update the metadata in pyproject.toml:
-[project]
-name = "your-project-name"
-version = "0.1.0"
-authors = [{name = "Your Name", email = "your.email@example.com"}]
+   - Project description
+   - Required depencencies
+   - Additional dev/test depencencies (if required)
 3. Update environment.yaml with your preferred virtual environment name.
 name: your-env-name
 4. For local development, build the dev container:
 code --remote .
+5. Modify the LICENSE file with updated name and year.
+6. Configure the Development Container:
+   - Update the devcontainer.json file with your preferred settings.
+   - Adjust the Python version (if required) in the `environment.yaml' file.
+7. Update Github Configurations:
+    - Modify the `.github/codespace.yaml` file with your project name.
+    - Adjust forwarded ports if needed.

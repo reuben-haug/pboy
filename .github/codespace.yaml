@@ -1,4 +1,4 @@
-# .github/codespace.yml
+# .github/codespace.yaml
 name: "Project Template Codespace"
 on_create:
   tasks:
