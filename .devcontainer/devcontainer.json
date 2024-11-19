@@ -1,5 +1,5 @@
 {
-    "name": "Python Dev Environment",
+    "name": "Python Development Container",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
@@ -9,42 +9,28 @@
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
-                "ms-azuretools.vscode-docker",
-                "GitHub.copilot",
-                "GitHub.copilot-chat",
-                "Git.git",
-                "tamasfe.even-better-toml",
                 "ms-python.black-formatter",
-                "ms-python.flake8",
-                "GitHub.vscode-pull-request-github",
-                "microsoft.vscode-github-authentication"
+                "ms-python.isort",
+                "ms-python.flake8"
             ],
             "settings": {
-                "python.pythonPath": "/opt/conda/envs/myenv/bin/python",
-                "python.envFile": "${workspaceFolder}/.env",
+                "python.defaultInterpreterPath": "/opt/conda/envs/myenv/bin/python",
+                "python.formatting.provider": "black",
                 "editor.formatOnSave": true,
-                "python.linting.flake8Enabled": true,
-                "python.linting.enabled": true,
-                "security.workspace.trust.enabled": true,
-                "security.workspace.trust.untrustedFiles": "open",
-                "git.enableCommitSigning": true,
-                "git.requireGpgSign": true,
-                "git.enableSignedBadge": true
-            }
-        },
-        "codespaces": {
-            "repositories": {
-                "*": {
-                    "trusted": true
-                },
-                "your-org/*": {
-                    "trusted": true,
-                    "permissions": "read-all"
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": "explicit"
                 }
             }
         }
     },
-    "postCreateCommand": "/bin/bash -c 'conda init bash && source ~/.bashrc && conda activate myenv && pip install -e \".[dev,test]\"'",
+    "postCreateCommand": [
+        "eval \"$(/opt/conda/bin/conda shell.bash hook)\"",
+        "conda init bash",
+        "source ~/.bashrc",
+        "conda create -n myenv python=3.9 -y",
+        "conda activate myenv",
+        "pip install -e \".[dev,test]\""
+    ],
     "remoteUser": "vscode",
     "updateRemoteUserUID": true,
     "features": {
@@ -52,12 +38,6 @@
             "installZsh": true,
             "username": "vscode",
             "upgradePackages": false
-        },
-        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-            "moby": true,
-            "installDockerBuildx": true,
-            "version": "latest",
-            "dockerDashComposeVersion": "v2"
         }
     },
     "securityOpt": ["no-new-privileges"],
