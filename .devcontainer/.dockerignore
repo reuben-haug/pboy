@@ -1,7 +1,7 @@
 # Ignore everything by default
 **
 
-# Allow files needed for building the project
+# Allow essential project files
 !src/
 !tests/
 !docs/
@@ -9,22 +9,31 @@
 !pyproject.toml
 !tox.ini
 !README.md
-!requirements.txt
+!requirements*.txt
 !Makefile
 !make.bat
 
-# Allow .devcontainer directory and its contents
+# Development environment
 !.devcontainer/
 !Dockerfile
 !.dockerignore
-!requirements-dev.txt
-
-# Allow .gitignore file
-!.gitignore
-
-# Allow environment variables and files
-!.env
 !environment.yaml
 
-# Allow pre-commit configuration file
+# Configuration files
+!.gitignore
 !.pre-commit-config.yaml
+!.flake8
+!.coveragerc
+!pytest.ini
+!.editorconfig
+
+# Documentation and examples
+!examples/
+!CHANGELOG.md
+!LICENSE
+!CONTRIBUTING.md
+
+# Keep secrets and local settings out
+.env*
+*.pem
+*.key
