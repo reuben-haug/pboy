@@ -4,18 +4,23 @@
 
 # Then, allow specific files/folders
 
-# Git
-!.gitignore
-!.gitattributes
-
-# Python project files
-!*.py
-!*.yaml
+# Core Python project files
 !pyproject.toml
-!requirements.txt
-!requirements-dev.txt
 !setup.cfg
 !setup.py
+!requirements.txt
+!requirements-dev.txt
+!*.yaml
+
+# Source code and tests
+!src/
+!src/**/*.py
+!tests/
+!tests/**/*.py
+!tests/**/*.feature
+!pytest.ini
+!tox.ini
+!.coveragerc
 
 # Documentation
 !docs/
@@ -26,18 +31,15 @@
 !CHANGELOG.md
 !LICENSE
 
-# Dev Container
+# Development environment
 !.devcontainer/
 !.devcontainer/**
-
-# Test configurations
-!pytest.ini
-!tox.ini
-!.coveragerc
-
-# Keep all GitHub workflows
 !.github/
 !.github/**/*.yml
+
+# Version control
+!.gitignore
+!.gitattributes
 
 # Explicitly block
 .env
@@ -47,10 +49,3 @@ __pycache__/
 dist/
 build/
 .pytest_cache/
-.tox/
-.coverage
-
-# VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
