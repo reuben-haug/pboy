@@ -1,5 +1,5 @@
 # .github/codespace.yaml
-name: "Project Template Codespace"
+name: PROJECT_NAME_PLACEHOLDER
 on_create:
   tasks:
     - name: Install Dependencies
