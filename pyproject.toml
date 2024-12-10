@@ -9,7 +9,7 @@ authors = [
 ]
 description = "Real-World Python Projects -- Project 0."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 
 dependencies = [
     # Packages required -- None for Project Zero.
