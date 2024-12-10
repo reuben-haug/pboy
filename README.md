@@ -5,42 +5,45 @@ Your project description.
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Setup Instructions](#setup-instructions)
-3. [Usage](#usage)
-4. [Testing](#testing)
-5. [Contributing](#contributing)
+2. [Template Configuration](#template-configuration)
+3. [Setup Instructions](#setup-instructions)
+4. [Usage](#usage)
+5. [Testing](#testing)
+6. [Contributing](#contributing)
 
 ## Overview
 
 This project is a part of a personal portfolio/coding challenge series and adheres to standardized project practices, including automated testing, code quality checks, and documentation.
 
+## Template Configuration
+
+The setup script (`setup_template.py`) will help you configure the following files:
+- `pyproject.toml` - Project metadata and dependencies
+- `environment.yaml` - Conda environment configuration
+- `LICENSE` - Project license information
+- `.github/codespace.yaml` - GitHub Codespace settings
+- `docs/conf.py` - Sphinx documentation settings
+
+TODO: Detail the above files and their configuration options
+
 ## Setup Instructions
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/reuben-haug/pboy.git
-   cd pboy
-   ```
-
-## Initial Setup Instructions
-
-1. After using this template, initialize the documentation:
+1. **Clone and Configure**:
+```bash
+git clone https://github.com/reuben-haug/pboy.git
+cd pboy
+python setup_template.py  # Follow the prompts to configure your project
+```
+2. Initialize Documentation:
 ```bash
 cd docs
 sphinx-quickstart
 ```
-2. Update the metadata in pyproject.toml:
-   - Project description
-   - Required depencencies
-   - Additional dev/test depencencies (if required)
-3. Update environment.yaml with your preferred virtual environment name.
-name: your-env-name
-4. For local development, build the dev container:
-code --remote .
-5. Modify the LICENSE file with updated name and year.
-6. Configure the Development Container:
-   - Update the devcontainer.json file with your preferred settings.
-   - Adjust the Python version (if required) in the `environment.yaml' file.
-7. Update Github Configurations:
-    - Modify the `.github/codespace.yaml` file with your project name.
-    - Adjust forwarded ports if needed.
+3. Development Environment Setup:
+```code --remote .``` # Opens VS Code with dev container
+4. Additional Configuration (optional):
+- Adjust python version in `environment.yaml`
+- Update forwarded ports in `codespace.yaml`
+- Modify dev container settings in `.devcontainer/devcontainer.json`
+
+TODO: Check make installation in Dockerfile
