@@ -12,6 +12,7 @@ RUN apt-get update && \
     git \
     gh \
     openssh-client \
+    make \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Miniconda
