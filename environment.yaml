@@ -1,16 +1,13 @@
-name: myenv
+name: pboy
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - python=3.12
-  - sphinx
   - pip
   - pip:
-    - pip-tools
-    - pytest==7.2.0
-    - tox==4.0.8
-    - behave==1.2.6
     - black==23.10.1
-    - sphinx==7.0.1
-    - sphinxcontrib-plantuml==0.25
     - pip-tools==6.13.0
+    - mypy
+    - flake8==6.1.0
+    - -e .[dev,test]

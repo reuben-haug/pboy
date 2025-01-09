@@ -78,4 +78,24 @@ sphinx-quickstart
 - Update forwarded ports in `codespace.yaml`
 - Modify dev container settings in `.devcontainer/devcontainer.json`
 
-TODO: Check make installation in Dockerfile
+TODO:
+- Add more detailed setup instructions
+Testing:
+- Add more comprehensive tests in tests directory
+- Implement test coverage reporting
+- Fill out empty tox.ini configuration
+
+Documentation:
+- Complete the empty documentation files
+- Add docstrings to functions in main.py
+- Fill out the project description in README.md
+
+Code Quality:
+- Fill out the empty pre-commit-config.yaml with hooks for:
+- Add type hints to all Python functions
+
+Add more GitHub Actions workflows for:
+- Automated testing
+- Code quality checks
+- Documentation building
+- Release automation
