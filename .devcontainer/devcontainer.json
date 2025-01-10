@@ -26,12 +26,12 @@
     "postCreateCommand": [
         "/bin/bash",
         "-ic",
-        "source /opt/conda/etc/profile.d/mamba.sh && eval \"$(mamba shell hook --shell bash)\" && .devcontainer/conda_setup.sh"
+        "source /opt/conda/etc/profile.d/mamba.sh && eval \"$(mamba shell hook --shell bash)\" && mamba shell init --shell bash --root-prefix=~/.local/share/mamba && .devcontainer/conda_setup.sh"
     ],
     "postStartCommand": [
         "/bin/bash",
-        "-c",
-        "source /opt/conda/etc/profile.d/conda.sh && source /opt/conda/etc/profile.d/mamba.sh && mamba shell init --shell bash && eval \"$(mamba shell hook --shell bash)\" && mamba activate pboy"
+        "-ic",
+        "source /opt/conda/etc/profile.d/mamba.sh && eval \"$(mamba shell hook --shell bash)\" && echo 'Shell initialized' && sleep 2 && mamba activate pboy"
     ],
     "remoteUser": "vscode",
     "updateRemoteUserUID": true,
