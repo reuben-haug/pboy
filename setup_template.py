@@ -27,8 +27,8 @@ def main():
 
     files_to_update = [
         "pyproject.toml",
-        "environment.yml",
-        "LICENSE"
+        "environment.yaml",
+        "LICENSE",
         ".github/codespace.yaml"
     ]
 
