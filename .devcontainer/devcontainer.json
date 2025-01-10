@@ -25,13 +25,13 @@
     },
     "postCreateCommand": [
         "/bin/bash",
-        "-c",
-        "chmod +x .devcontainer/conda_setup.sh && .devcontainer/conda_setup.sh"
+        "-ic",
+        "source /opt/conda/etc/profile.d/mamba.sh && eval \"$(mamba shell hook --shell bash)\" && .devcontainer/conda_setup.sh"
     ],
     "postStartCommand": [
         "/bin/bash",
         "-c",
-        "source ~/.bashrc && conda activate pboy"
+        "source /opt/conda/etc/profile.d/conda.sh && source /opt/conda/etc/profile.d/mamba.sh && mamba shell init --shell bash && eval \"$(mamba shell hook --shell bash)\" && mamba activate pboy"
     ],
     "remoteUser": "vscode",
     "updateRemoteUserUID": true,
@@ -44,5 +44,9 @@
     },
     "securityOpt": ["no-new-privileges"],
     "capAdd": [],
-    "privileged": false
+    "privileged": false,
+    "remoteEnv": {
+        "MAMBA_ROOT_PREFIX": "/opt/conda",
+        "MAMBA_EXE": "/opt/conda/bin/mamba"
+    }
 }

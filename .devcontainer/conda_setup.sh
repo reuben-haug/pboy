@@ -1,21 +1,24 @@
 #!/bin/bash
-set -e
+set -e  # Exit on error
+set -x  # Print commands for debugging
 
-# Initialize conda first
-source /opt/conda/etc/profile.d/conda.sh
-conda init bash
-
-# Initialize mamba
+# Ensure environment variables are set
+export MAMBA_ROOT_PREFIX="/opt/conda"
 export MAMBA_EXE="/opt/conda/bin/mamba"
+
+# Initialize shell
+source ~/.bashrc
+source /opt/conda/etc/profile.d/conda.sh
 source /opt/conda/etc/profile.d/mamba.sh
-mamba init bash
+eval "$(mamba shell hook --shell bash)"
 
 # Create environment if it doesn't exist
 if [ ! -d "/opt/conda/envs/pboy" ]; then
-    mamba env create -f environment.yaml
+    MAMBA_NO_BANNER=1 mamba env create -f environment.yaml
 fi
 
-source ~/.bashrc
+# Activate environment
+mamba activate pboy
 
 # Install packages in development mode
 pip install -e '.[dev,test]'
