@@ -16,11 +16,13 @@ def main():
     project_name = input('Enter project name: ')
     author_name = input('Enter author name: ')
     year = input('Enter the current year: ')
+    project_description = input('Enter a short project description: ')
 
     replacements = {
         'PROJECT_NAME_PLACEHOLDER': project_name,
         'AUTHOR_NAME_PLACEHOLDER': author_name,
-        'YEAR_PLACEHOLDER': year
+        'YEAR_PLACEHOLDER': year,
+        'PROJECT_DESCRIPTION_PLACEHOLDER': project_description
     }
 
     files_to_update = [

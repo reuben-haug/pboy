@@ -7,7 +7,7 @@ version = "1.0.0"
 authors = [
     {name = "Reuben Haug", email = "reuben.haug@gmail.com"},
 ]
-description = "Real-World Python Projects -- Project 0."
+description = "PROJECT_DESCRIPTION_PLACEHOLDER"
 readme = "README.md"
 requires-python = ">=3.12"
 
