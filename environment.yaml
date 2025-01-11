@@ -1,13 +1,17 @@
 name: pboy
 channels:
   - conda-forge
-  - defaults
 dependencies:
+  # Core Python
   - python=3.12
   - pip
+  
+  # Development Tools
+  - black=23.10.1
+  - pip-tools=6.13.0
+  - mypy
+  - flake8=6.1.0
+  
+  # Additional packages via pip
   - pip:
-    - black==23.10.1
-    - pip-tools==6.13.0
-    - mypy
-    - flake8==6.1.0
     - -e .[dev,test]

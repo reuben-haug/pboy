@@ -2,6 +2,11 @@
 set -e  # Exit on error
 set -x  # Print commands for debugging
 
+# Initialize mamba
+source /opt/conda/etc/profile.d/mamba.sh
+mamba shell init --shell bash --root-prefix=/opt/conda
+eval "$(mamba shell hook --shell bash)"
+
 # Ensure environment variables are set
 export MAMBA_ROOT_PREFIX="/opt/conda"
 export MAMBA_EXE="/opt/conda/bin/mamba"
@@ -14,6 +19,6 @@ else
     echo "Environment pboy already exists."
 fi
 
-# Install packages in development mode
-echo "Installing packages in development mode..."
+# Activate environment and install packages
+mamba activate pboy
 pip install -e '.[dev,test]'
