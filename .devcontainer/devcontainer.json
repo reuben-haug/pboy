@@ -1,5 +1,5 @@
 {
-    "name": "Python Development Container",
+    "name": "Python Environment",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
@@ -26,7 +26,7 @@
     "postCreateCommand": [
         "/bin/bash",
         "-c",
-        "source /opt/conda/etc/profile.d/mamba.sh && eval \"$(mamba shell hook --shell bash)\" && mamba shell init --shell bash --root-prefix=/home/vscode/.local/share/mamba && .devcontainer/conda_setup.sh"
+        ".devcontainer/conda_setup.sh"
     ],
     "postStartCommand": [
         "/bin/bash",

@@ -1,28 +1,14 @@
-# Use an official Python runtime as a parent image
-FROM python:3.12-slim
+FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 
-# Set environment variables
-ENV CONDA_DIR=/opt/conda \
-    PATH=/opt/conda/bin:$PATH \
-    SHELL=/bin/bash \
-    LANG=C.UTF-8 \
-    LC_ALL=C.UTF-8
+# Environment variables
+ENV CONDA_DIR=/opt/conda
+ENV PATH=$CONDA_DIR/bin:$PATH
 
-# System setup
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        wget bzip2 git gh openssh-client make && \
-    rm -rf /var/lib/apt/lists/* && \
-    useradd -ms /bin/bash -d /home/vscode vscode && \
-    # Install conda
-    wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
-    bash /tmp/miniconda.sh -b -p $CONDA_DIR && \
-    rm /tmp/miniconda.sh && \
-    # Install mamba
-    conda install -n base -c conda-forge mamba && \
-    mamba shell init --shell bash && \
-    echo "source ~/.bashrc" >> ~/.profile && \
-    # Set permissions
+# Install mamba as root
+USER root
+RUN conda install -n base -c conda-forge mamba && \
+    mamba shell init --shell bash --root-prefix=$CONDA_DIR && \
+    echo "source $CONDA_DIR/etc/profile.d/mamba.sh" >> /etc/bash.bashrc && \
     chown -R vscode:vscode $CONDA_DIR /home/vscode
 
 # Switch to non-root user
@@ -34,8 +20,7 @@ COPY --chown=vscode:vscode . .
 
 # Setup environment
 COPY --chown=vscode:vscode environment.yaml .
-RUN conda init bash && \
-    mamba env create -f environment.yaml && \
+RUN mamba env create -f environment.yaml && \
     echo "mamba activate pboy" >> ~/.bashrc
 
 # Configure git
